@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRONPULSE GYM | Train in Neon</title>
+    <meta name="description" content="A gym experience built for focus, power, and progress. Join IRONPULSE GYM today.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-x"></div>
+        <div class="loading-text">IRONPULSE</div>
+    </div>
+
+    <!-- Grain Overlay -->
+    <div class="grain-overlay"></div>
+
+    <!-- Global X Motif -->
+    <div class="global-x" id="globalX"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-logo" onclick="scrollToSection('section1')">IRONPULSE</div>
+        <div class="nav-links" id="navLinks">
+            <a href="#section11" class="nav-link" onclick="scrollToSection('section11'); return false;">Programs</a>
+            <a href="#section12" class="nav-link" onclick="scrollToSection('section12'); return false;">Membership</a>
+            <a href="#section13" class="nav-link" onclick="scrollToSection('section13'); return false;">Contact</a>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#section11" onclick="scrollToSection('section11'); return false;">Programs</a>
+        <a href="#section12" onclick="scrollToSection('section12'); return false;">Membership</a>
+        <a href="#section13" onclick="scrollToSection('section13'); return false;">Contact</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- Section 1: Hero - Neon Manifesto -->
+        <section class="section section-pinned" id="section1" style="z-index: 10;">
+            <div class="hero-content">
+                <div class="hero-label">IRONPULSE GYM — EST. 2016</div>
+                <h1 class="hero-headline">
+                    <span class="word">TRAIN</span>
+                    <span class="word">IN</span>
+                    <span class="word">NEON</span>
+                </h1>
+                <p class="hero-subheadline">A gym experience built for focus, power, and progress.</p>
+                <a href="#section11" class="hero-cta" onclick="scrollToSection('section11'); return false;">
+                    Explore programs
+                    <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Section 2: No Limits -->
+        <section class="section section-pinned" id="section2" style="z-index: 20;">
+            <div class="split-layout left-image">
+                <div class="image-card">
+                    <img src="images/img_gym_floor.jpg" alt="Gym interior with equipment">
+                </div>
+                <div class="text-content">
+                    <h2 class="section-headline">
+                        <span class="line">THERE ARE</span>
+                        <span class="line accent">NO LIMITS</span>
+                    </h2>
+                    <p class="section-caption">Open floor, heavy iron, and room to move.</p>
+                    <a href="#section11" class="section-cta" onclick="scrollToSection('section11'); return false;">
+                        See the space
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Focus -->
+        <section class="section section-pinned" id="section3" style="z-index: 30;">
+            <div class="split-layout right-image">
+                <div class="text-content">
+                    <h2 class="section-headline">
+                        <span class="line">WHAT YOU</span>
+                        <span class="line accent">WANT TO</span>
+                    </h2>
+                    <p class="section-caption">Show up. Lock in. Repeat.</p>
+                    <a href="#section12" class="section-cta" onclick="scrollToSection('section12'); return false;">
+                        Book a class
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+                <div class="image-card">
+                    <img src="images/img_athlete_focus.jpg" alt="Athlete focused training">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Stronger -->
+        <section class="section section-pinned" id="section4" style="z-index: 40;">
+            <div class="split-layout left-image">
+                <div class="image-card">
+                    <img src="images/img_athlete_stronger.jpg" alt="Athlete strength training">
+                </div>
+                <div class="text-content">
+                    <h2 class="section-headline">
+                        <span class="line">YOU CAN BE</span>
+                        <span class="line accent">STRONGER</span>
+                    </h2>
+                    <p class="section-caption">Progressive overload. Smart coaching. Real results.</p>
+                    <a href="#section11" class="section-cta" onclick="scrollToSection('section11'); return false;">
+                        Meet our coaches
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Faster -->
+        <section class="section section-pinned" id="section5" style="z-index: 50;">
+            <div class="split-layout right-image">
+                <div class="text-content">
+                    <h2 class="section-headline">
+                        <span class="line">YOU CAN BE</span>
+                        <span class="line accent">FASTER</span>
+                    </h2>
+                    <p class="section-caption">Intervals, agility, and explosive work.</p>
+                    <a href="#section11" class="section-cta" onclick="scrollToSection('section11'); return false;">
+                        Try a conditioning class
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+                <div class="image-card">
+                    <img src="images/img_athlete_faster.jpg" alt="Athlete speed training">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Better -->
+        <section class="section section-pinned" id="section6" style="z-index: 60;">
+            <div class="split-layout left-image">
+                <div class="image-card">
+                    <img src="images/img_athlete_better.jpg" alt="Athlete mobility training">
+                </div>
+                <div class="text-content">
+                    <h2 class="section-headline">
+                        <span class="line">YOU CAN BE</span>
+                        <span class="line accent">BETTER</span>
+                    </h2>
+                    <p class="section-caption">Mobility, recovery, and consistent habits.</p>
+                    <a href="#section11" class="section-cta" onclick="scrollToSection('section11'); return false;">
+                        View recovery options
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Power -->
+        <section class="section section-pinned" id="section7" style="z-index: 70;">
+            <div class="split-layout right-image">
+                <div class="text-content">
+                    <h2 class="section-headline">
+                        <span class="line">YOU CAN BE</span>
+                        <span class="line accent">POWERFUL</span>
+                    </h2>
+                    <p class="section-caption">Lift heavy. Control the weight. Own the set.</p>
+                    <a href="#section11" class="section-cta" onclick="scrollToSection('section11'); return false;">
+                        Start strength training
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+                <div class="image-card">
+                    <img src="images/img_athlete_power.jpg" alt="Athlete power lifting">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8: Energy -->
+        <section class="section section-pinned" id="section8" style="z-index: 80;">
+            <div class="split-layout left-image">
+                <div class="image-card">
+                    <img src="images/img_athlete_energy.jpg" alt="Athlete with energy">
+                </div>
+                <div class="text-content">
+                    <h2 class="section-headline">
+                        <span class="line">YOU CAN HAVE</span>
+                        <span class="line accent">MORE ENERGY</span>
+                    </h2>
+                    <p class="section-caption">Training that fuels the rest of your day.</p>
+                    <a href="#section12" class="section-cta" onclick="scrollToSection('section12'); return false;">
+                        Check class schedule
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 9: Victory -->
+        <section class="section section-pinned" id="section9" style="z-index: 90;">
+            <div class="split-layout right-image">
+                <div class="text-content">
+                    <h2 class="section-headline">
+                        <span class="line">YOU CAN GET</span>
+                        <span class="line accent">THE VICTORY</span>
+                    </h2>
+                    <p class="section-caption">PRs, consistency, and the confidence that follows.</p>
+                    <a href="#section11" class="section-cta" onclick="scrollToSection('section11'); return false;">
+                        Read member stories
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+                <div class="image-card">
+                    <img src="images/img_athlete_victory.jpg" alt="Athlete victory celebration">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 10: Join -->
+        <section class="section section-pinned" id="section10" style="z-index: 100;">
+            <div class="split-layout left-image">
+                <div class="image-card">
+                    <img src="images/img_athlete_join.jpg" alt="Join our gym">
+                </div>
+                <div class="text-content">
+                    <h2 class="section-headline">
+                        <span class="line">JOIN OUR</span>
+                        <span class="line accent">GYM TODAY</span>
+                    </h2>
+                    <p class="section-caption">Try a week on us. No commitment, just work.</p>
+                    <div class="cta-group">
+                        <a href="#section12" class="btn-primary" onclick="scrollToSection('section12'); return false;">
+                            Claim free week
+                            <i data-lucide="arrow-right"></i>
+                        </a>
+                        <a href="#section12" class="section-cta secondary" onclick="scrollToSection('section12'); return false;">
+                            View membership
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 11: Programs -->
+        <section class="section section-flowing" id="section11" style="z-index: 110;">
+            <div class="programs-container">
+                <div class="programs-header">
+                    <h2 class="section-title">Programs built for every level.</h2>
+                    <p class="section-subtitle">From foundational strength to advanced performance.</p>
+                </div>
+                <div class="programs-grid">
+                    <div class="program-card" data-parallax="1">
+                        <div class="program-image">
+                            <img src="images/img_program_strength.jpg" alt="Strength Foundation">
+                        </div>
+                        <div class="program-content">
+                            <h3>Strength Foundation</h3>
+                            <p>Build technique and confidence under the bar.</p>
+                            <button class="program-arrow" aria-label="Learn more">
+                                <i data-lucide="arrow-up-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="program-card" data-parallax="2">
+                        <div class="program-image">
+                            <img src="images/img_program_cardio.jpg" alt="Conditioning & Cardio">
+                        </div>
+                        <div class="program-content">
+                            <h3>Conditioning & Cardio</h3>
+                            <p>Burn calories and boost endurance.</p>
+                            <button class="program-arrow" aria-label="Learn more">
+                                <i data-lucide="arrow-up-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="program-card" data-parallax="3">
+                        <div class="program-image">
+                            <img src="images/img_program_recovery.jpg" alt="Recovery & Mobility">
+                        </div>
+                        <div class="program-content">
+                            <h3>Recovery & Mobility</h3>
+                            <p>Move better, recover smarter.</p>
+                            <button class="program-arrow" aria-label="Learn more">
+                                <i data-lucide="arrow-up-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 12: Membership -->
+        <section class="section section-flowing" id="section12" style="z-index: 120;">
+            <div class="membership-container">
+                <div class="membership-header">
+                    <h2 class="section-title">Membership</h2>
+                    <p class="section-subtitle">Train weekly or commit monthly—cancel anytime.</p>
+                </div>
+                <div class="pricing-cards">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Weekly Pass</h3>
+                            <div class="pricing-price">
+                                <span class="currency">$</span>
+                                <span class="amount">29</span>
+                                <span class="period">/week</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i data-lucide="check"></i> Full gym access</li>
+                            <li><i data-lucide="check"></i> All group classes</li>
+                            <li><i data-lucide="check"></i> Locker room access</li>
+                        </ul>
+                        <button class="pricing-btn outline">Get started</button>
+                    </div>
+                    <div class="pricing-card featured">
+                        <div class="pricing-badge">Most popular</div>
+                        <div class="pricing-header">
+                            <h3>Monthly Unlimited</h3>
+                            <div class="pricing-price">
+                                <span class="currency">$</span>
+                                <span class="amount">89</span>
+                                <span class="period">/month</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i data-lucide="check"></i> Unlimited gym access</li>
+                            <li><i data-lucide="check"></i> All group classes</li>
+                            <li><i data-lucide="check"></i> 2 PT sessions/month</li>
+                            <li><i data-lucide="check"></i> Nutrition consultation</li>
+                        </ul>
+                        <button class="pricing-btn filled">Get started</button>
+                    </div>
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>12-Month Commitment</h3>
+                            <div class="pricing-price">
+                                <span class="currency">$</span>
+                                <span class="amount">69</span>
+                                <span class="period">/month</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i data-lucide="check"></i> Unlimited everything</li>
+                            <li><i data-lucide="check"></i> 4 PT sessions/month</li>
+                            <li><i data-lucide="check"></i> Recovery suite access</li>
+                            <li><i data-lucide="check"></i> Guest passes (2/mo)</li>
+                        </ul>
+                        <button class="pricing-btn outline">Get started</button>
+                    </div>
+                </div>
+                <div class="booking-teaser">
+                    <p>Prefer to drop in? Book a single class.</p>
+                    <button class="btn-primary">
+                        Book a class
+                        <i data-lucide="arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 13: Contact + Footer -->
+        <section class="section section-flowing" id="section13" style="z-index: 130;">
+            <div class="contact-container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2 class="section-title">Visit IRONPULSE</h2>
+                        <div class="info-items">
+                            <div class="info-item">
+                                <i data-lucide="map-pin"></i>
+                                <div>
+                                    <strong>Address</strong>
+                                    <p>1234 Fitness Ave, Downtown<br>Los Angeles, CA 90015</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i data-lucide="clock"></i>
+                                <div>
+                                    <strong>Hours</strong>
+                                    <p>Mon–Fri: 5am–11pm<br>Sat–Sun: 7am–9pm</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i data-lucide="phone"></i>
+                                <div>
+                                    <strong>Phone</strong>
+                                    <p>(213) 555-0199</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i data-lucide="mail"></i>
+                                <div>
+                                    <strong>Email</strong>
+                                    <p>hello@ironpulse.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="directions-link">
+                            Get directions
+                            <i data-lucide="external-link"></i>
+                        </a>
+                    </div>
+                    <div class="contact-form-wrapper">
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required placeholder="Your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required placeholder="your@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="4" required placeholder="How can we help?"></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary full">
+                                Send message
+                                <i data-lucide="send"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <div class="footer-logo">IRONPULSE</div>
+                        <p>Train in neon. Move with purpose.</p>
+                    </div>
+                    <div class="footer-links">
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
+                        <a href="#" class="instagram-link">
+                            <i data-lucide="instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 IRONPULSE GYM. All rights reserved.</p>
+                </div>
+            </footer>
+        </section>
+
+    </main>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i data-lucide="chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
